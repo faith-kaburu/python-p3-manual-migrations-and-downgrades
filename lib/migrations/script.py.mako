@@ -17,8 +17,8 @@ depends_on = ${repr(depends_on)}
 
 
 def upgrade() -> None:
-    ${upgrades if upgrades else "pass"}
+    op.rename_table('students','scholars')
 
 
 def downgrade() -> None:
-    ${downgrades if downgrades else "pass"}
+    op.rename_table('scholars','students')
